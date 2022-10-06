@@ -1,5 +1,5 @@
 ﻿Console.Clear();
-Console.Write("Введите номер задачи(1-3):");
+Console.Write("Введите номер задачи(1-4):");
 int nom = Convert.ToInt32(Console.ReadLine());
 switch (nom)
 {
@@ -61,6 +61,34 @@ switch (nom)
         }
         Console.WriteLine("Сдвиг вправо [ " + string.Join(", ", arrayI) + " ]");
         break;
+
+    case 4:
+        Console.WriteLine("Алгоритм который сдвигает массив.");
+        Console.Write("Введите размер массива:");
+        int size4 = Convert.ToInt32(Console.ReadLine());
+        int[] array3 = new int[size4];
+        for (int i = 0; i < array3.Length; i++)
+        {
+            Console.Write($"Введите {i + 1} число массива:");
+            array3[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("[ " + string.Join(", ", array3) + " ]");
+
+        if (array3.Length > 1)
+        {
+            int tmp3 = array3[0];
+
+            for (int i = 0; i < array3.Length - 1; i++)
+            {
+                array3[i] = array3[i + 1];
+            }
+
+            array3[array3.Length - 1] = tmp3;
+        }
+        Console.WriteLine("Сдвиг влево [ " + string.Join(", ", array3) + " ]");
+
+        break;
+
 }
 
 /* 
